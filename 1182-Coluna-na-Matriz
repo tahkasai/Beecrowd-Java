@@ -1,0 +1,45 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int C = scanner.nextInt(); // Coluna da operaçõa
+
+        float media = 0;
+        float soma = 0;
+
+        float [][] matriz = new float[12][12];
+
+        if(0<=C && C<=11){
+
+            String T = scanner.next(); // identifica se a operação sera de soma (S) ou media(M)
+
+            for (int i = 0; i <matriz.length; i++){
+                for (int j = 0; j <matriz[i].length; j++){
+                    float num = scanner.nextFloat();
+                    matriz[i][j] = num;
+                }
+            }         
+            
+            // fazer o calculo
+            if(T == "S"){
+                for (int k=0;k<matriz.length;k++){
+                    float numSoma = matriz[k][C];
+                    soma = soma+numSoma;
+                }
+                // exibição
+                System.out.printf("%.1f",soma);
+                System.out.println();
+            }else{
+                for (int k=0;k<matriz.length;k++){
+                    float numMedia = matriz[k][C];
+                    media = media+numMedia;
+                }
+                // exibição
+                System.out.printf("%.1f",(media/12));
+                System.out.println();
+            }
+            
+        }
+    }
+}
