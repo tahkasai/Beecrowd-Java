@@ -1,0 +1,21 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) throws Exception {
+        Scanner scanner = new Scanner(System.in);
+
+        while (true) {
+            String xp = scanner.nextLine();
+
+            if (xp.equals("0 0") || xp == null){
+                break;
+            }
+
+            String[] xps = xp.split(" ");
+
+            int valor = Integer.parseInt(xps[0]) * Integer.parseInt(xps[1]);
+
+            System.out.println(valor);
+        }
+    }
+}
